@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import pool from "./db";
 import router from "./routes/userRoutes";
 import userRoutes from "./routes/userRoutes";
+import { patientRouter } from "./routes/patientRoutes";
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/users", userRoutes);
+app.use("/patients", patientRouter);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
