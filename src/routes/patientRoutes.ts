@@ -15,4 +15,4 @@ router.get("/:id", getPatientById);
 router.put("/:id", updatePatient);
 router.delete("/:id", deletePatient);
 
-export { router as patientRouter };
+export default router;

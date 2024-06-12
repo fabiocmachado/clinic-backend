@@ -6,7 +6,7 @@ import {
   getUserById,
   updateUser,
 } from "../controllers/userController";
-import { patientRouter } from "./patientRoutes";
+import patientRouter from "./patientRoutes";
 
 const router: Router = Router();
 
@@ -15,6 +15,5 @@ router.get("/:id", getUserById);
 router.put("/:id", updateUser);
 router.post("/", createUser);
 router.delete("/:id", deleteUser);
-router.use("/", patientRouter);
 
 export default router;

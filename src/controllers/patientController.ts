@@ -1,5 +1,3 @@
-// controllers/patientController.ts
-
 import { Request, Response } from "express";
 import pool from "../db";
 import { IPatient } from "../models/Patients";

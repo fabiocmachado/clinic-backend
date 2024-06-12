@@ -1,9 +1,10 @@
 import express from "express";
 import dotenv from "dotenv";
 import pool from "./db";
-import router from "./routes/userRoutes";
 import userRoutes from "./routes/userRoutes";
-import { patientRouter } from "./routes/patientRoutes";
+import patientRouter from "./routes/patientRoutes";
+import appointmentsRouter from "./routes/appointmentRoutes";
+import proceduresRouter from "./routes/procedureRoutes";
 
 dotenv.config();
 
@@ -23,6 +24,8 @@ app.get("/", (req, res) => {
 
 app.use("/users", userRoutes);
 app.use("/patients", patientRouter);
+app.use("/appointments", appointmentsRouter);
+app.use("/procedures", proceduresRouter);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
