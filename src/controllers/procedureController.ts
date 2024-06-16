@@ -55,6 +55,24 @@ export async function getProcedureById(
   }
 }
 
+export async function getProceduresByPatientId(
+  req: Request,
+  res: Response
+): Promise<void> {
+  const { patient_id } = req.params;
+
+  try {
+    const { rows } = await pool.query(
+      "SELECT * FROM procedures WHERE patient_id = $1",
+      [patient_id]
+    );
+    res.status(200).json(rows);
+  } catch (error) {
+    console.error("Error fetching procedures by patient id:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+}
+
 export async function updateProcedure(
   req: Request,
   res: Response
