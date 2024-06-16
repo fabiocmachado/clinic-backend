@@ -6,7 +6,6 @@ import {
   getUserById,
   updateUser,
 } from "../controllers/userController";
-import { login } from "../controllers/authController";
 
 const router: Router = Router();
 

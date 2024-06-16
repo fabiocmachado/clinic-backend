@@ -25,6 +25,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/auth", authRoutes);
+
 app.use("/users", userRoutes);
 app.use("/patients", authenticateJWT, patientRouter);
 app.use("/appointments", authenticateJWT, appointmentsRouter);
